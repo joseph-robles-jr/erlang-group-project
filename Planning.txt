@@ -1,1 +1,1 @@
-This is a planning file
+controller: [1,1,0,0] will be [N,S,E,W] light states
