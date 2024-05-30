@@ -1,5 +1,5 @@
 -module(traficsim).
--export([start/0, trafic_light/0, trafic_button/2, traffic_server/0]).
+-export().
 
 
 start() ->
@@ -38,14 +38,9 @@ Pressed =:= 'y' ->
 Pressed =:= 'n' -> 
     Tc_pid ! 'n'
 
-
-end.
-
 trafic_server() ->
    receive
     {From, Button_state} 
-
-    Stat_of_light = green
     
 
     
@@ -63,7 +58,7 @@ trafic_server() ->
  
 %%______________________________________
 case (Stat_of_light) of (green) ->
-    
+    io:format "The light is now green",
 
     Tref = apply_after(2000),
 
@@ -73,7 +68,7 @@ case (Stat_of_light) of (green) ->
     Stat_of_light = yellow.
 
 case (Stat_of_light) of (yellow) ->
-    
+    io:format "The light is now Yellow",
     Tref = apply_after(2000)
     
     %change state to next color
@@ -81,7 +76,7 @@ case (Stat_of_light) of (yellow) ->
     Stat_of_light = red.
 
 case (Stat_of_light) of (red) ->
-    
+    io:format "The light is now red",
     Tref = apply_after(2000)
     
     %change state to next color
