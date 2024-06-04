@@ -59,7 +59,7 @@ trafic_button(Pressed,Tc_pid) ->
 
 
 trafic_server() ->
-   receive
+    receive
     {From, Button_state}, 
 
     Stat_of_light = green
