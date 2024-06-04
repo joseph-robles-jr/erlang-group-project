@@ -84,7 +84,7 @@ trafic_server() ->
 
 
         Tref = apply_after(2000),
-        
+
         case(button_state) of (true) ->
             timer:cancel(TRef)
         
