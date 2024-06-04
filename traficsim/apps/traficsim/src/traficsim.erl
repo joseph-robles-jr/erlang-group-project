@@ -82,8 +82,11 @@ trafic_server() ->
     case (Stat_of_light) of (green) ->
         
 
-        Tref = apply_after(2000),
 
+        Tref = apply_after(2000),
+        
+        case(button_state) of (true) ->
+            timer:cancel(TRef)
         
         %change state to next color
         Pid ! yellow,
